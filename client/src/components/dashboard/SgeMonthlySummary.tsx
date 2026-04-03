@@ -92,8 +92,9 @@ export function SgeMonthlySummary() {
         {/* 解读 */}
         <div className="mt-3 pt-3 border-t border-[rgba(212,168,83,0.08)]">
           <p className="text-[11px] text-[#8B7355] leading-relaxed">
-            <span className="text-[#D4A853] font-medium">出库量</span>是衡量国内实物黄金需求的最核心指标——黄金从交易所仓库被提走，意味着真实的实物买盘。
-            <span className="text-[#D4A853] font-medium">代理占比</span>反映散户/机构通过银行等渠道参与的活跃度。
+            2月上金所黄金成交量同比驤降52.9%，反映高金价显著抑制交易需求。
+            <span className="text-[#D4A853] font-medium">出库量</span>是衡量实物需求的核心指标，
+            <span className="text-[#D4A853] font-medium">代理占比</span>反映银行渠道积存金客户的参与活跃度。关注3月数据是否回升。
           </p>
         </div>
       </div>

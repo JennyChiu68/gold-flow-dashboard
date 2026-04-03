@@ -114,9 +114,9 @@ export function SentimentGauge() {
         </ResponsiveContainer>
       </div>
       <div className="flex justify-between text-[10px] text-[#6B5B3E] -mt-1">
-        <span>03-01</span>
-        <span>近一月趋势</span>
-        <span>03-28</span>
+        <span>03-03</span>
+        <span>近一月趋势（3月下旬急跌）</span>
+        <span>04-02</span>
       </div>
     </div>
   );

@@ -70,7 +70,7 @@ export function PbocReserve() {
         <div className="flex items-start gap-2">
           <Landmark className="w-3.5 h-3.5 text-[#D4A853] shrink-0 mt-0.5" />
           <p className="text-[11px] text-[#8B7355] leading-relaxed">
-            央行连续增持黄金储备，释放去美元化和储备多元化信号，为金价提供长期支撑。
+            央行连续16个月增持黄金储备，2月末达7422万盎司（约2308.5吨），释放坚定的去美元化信号，为金价提供官方托底。
           </p>
         </div>
       </div>

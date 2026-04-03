@@ -15,7 +15,7 @@ export function EtfFlowPanel() {
         <h3 className="text-sm font-semibold text-[#E8D5A3]">黄金ETF资金流向</h3>
         <span className="text-[10px] text-[#6B5B3E] px-2 py-0.5 rounded bg-[#1A1A24]">散户情绪</span>
       </div>
-      <p className="text-[10px] text-[#6B5B3E] mb-3">全市场14只黄金ETF · 日度净申赎</p>
+      <p className="text-[10px] text-[#6B5B3E] mb-3">全市场14只黄金ETF · 3月下旬暴跌期间资金大幅涌入抖底</p>
 
       {/* 总规模 */}
       <div className="grid grid-cols-2 gap-3 mb-4">
@@ -28,8 +28,8 @@ export function EtfFlowPanel() {
         </div>
         <div className="bg-[#1A1A24] rounded-lg p-3">
           <div className="text-[10px] text-[#6B5B3E] mb-0.5">月累计净流入</div>
-          <div className="text-lg font-bold text-[#C23B22]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
-            +{formatNumber(latestFlow.cumulative, 1)}
+          <div className={`text-lg font-bold ${latestFlow.cumulative >= 0 ? 'text-[#C23B22]' : 'text-[#2D8B56]'}`} style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+            {latestFlow.cumulative >= 0 ? '+' : ''}{formatNumber(latestFlow.cumulative, 1)}
           </div>
           <div className="text-[10px] text-[#8B7355]">亿元</div>
         </div>

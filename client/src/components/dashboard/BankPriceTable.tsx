@@ -66,6 +66,11 @@ export function BankPriceTable() {
               <div className="col-span-2 flex justify-center">
                 {bank.status === "正常" ? (
                   <span className="px-2 py-0.5 rounded text-[10px] bg-[#2D8B56]/15 text-[#2D8B56]">正常</span>
+                ) : bank.status === "限额" ? (
+                  <span className="px-2 py-0.5 rounded text-[10px] bg-[#D4A853]/15 text-[#D4A853] flex items-center gap-0.5">
+                    <AlertTriangle className="w-2.5 h-2.5" />
+                    {bank.status}
+                  </span>
                 ) : (
                   <span className="px-2 py-0.5 rounded text-[10px] bg-[#C23B22]/15 text-[#C23B22] flex items-center gap-0.5">
                     <AlertTriangle className="w-2.5 h-2.5" />

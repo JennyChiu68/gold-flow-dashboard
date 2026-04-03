@@ -68,7 +68,10 @@ export function FuturesHolding() {
         <div className="flex items-start gap-2">
           <BarChart3 className="w-3.5 h-3.5 text-[#D4A853] shrink-0 mt-0.5" />
           <p className="text-[11px] text-[#8B7355] leading-relaxed">
-            持仓量持续攀升，多头力量增强，市场看涨情绪浓厚。
+            {holdChange < 0 
+              ? `持仓量单日减少${Math.abs(holdChange).toLocaleString()}手，3月下旬暴跌引发多头大规模平仓，持仓从18.5万手高点回落。`
+              : `持仓量回升，多头力量正在重新聚集。`
+            }
           </p>
         </div>
       </div>

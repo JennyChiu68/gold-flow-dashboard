@@ -23,7 +23,11 @@ export function ShanghaiPremium() {
           {premium > 0 ? '+' : ''}{premium.toFixed(2)}
         </span>
         <span className="text-xs text-[#8B7355]">美元/盎司</span>
-        <TrendingUp className="w-3.5 h-3.5 text-[#C23B22] ml-1" />
+        {premium > 0 ? (
+          <TrendingUp className="w-3.5 h-3.5 text-[#C23B22] ml-1" />
+        ) : (
+          <TrendingUp className="w-3.5 h-3.5 text-[#2D8B56] ml-1 rotate-180" />
+        )}
       </div>
 
       {/* 溢价柱状图 */}
@@ -53,9 +57,12 @@ export function ShanghaiPremium() {
       {/* 解读 */}
       <div className="mt-3 pt-3 border-t border-[rgba(212,168,83,0.08)]">
         <div className="flex items-start gap-2">
-          <div className="w-1 h-8 rounded-full bg-[#C23B22] shrink-0 mt-0.5" />
+          <div className={`w-1 h-8 rounded-full ${premium > 0 ? 'bg-[#C23B22]' : 'bg-[#2D8B56]'} shrink-0 mt-0.5`} />
           <p className="text-[11px] text-[#8B7355] leading-relaxed">
-            当前溢价为正，表明国内实物黄金需求旺盛，"大妈"买盘力量较强，对金价形成托底支撑。
+            {premium > 0 
+              ? '当前溢价为正，表明国内实物黄金需求旺盛，“大妈”买盘力量较强，对金价形成托底支撑。'
+              : '当前转为折价，表明3月下旬金价暴跌引发国内投资者恐慌性抛售，实物托底力量暂时减弱。关注溢价何时回正。'
+            }
           </p>
         </div>
       </div>

@@ -57,9 +57,9 @@ export function BankEventsTimeline() {
       {/* 底部解读 */}
       <div className="mt-4 pt-3 border-t border-[rgba(212,168,83,0.08)]">
         <p className="text-[11px] text-[#8B7355] leading-relaxed">
-          近半年多家银行密集上调积存金门槛，反映出
-          <span className="text-[#D4A853] font-medium">银行端风控收紧</span>
-          的趋势，但也侧面说明积存金需求持续旺盛。
+          2026年Q1银行集体收紧积存金业务：工行6次上调门槛至1300元，建行调至1500元，招行点差从3元涨至5元，
+          <span className="text-[#D4A853] font-medium">邮储/民生等银行要求客户解约销户</span>
+          。这是自2018年《黄金积存业务管理暂行办法》以来最大规模的风控升级潮。
         </p>
       </div>
     </div>
