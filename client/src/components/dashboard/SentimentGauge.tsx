@@ -46,7 +46,7 @@ export function SentimentGauge() {
           >
             独家编制
           </span>
-          <span className="text-[9px] text-[#6B5B3E]">· 核心指标</span>
+
         </div>
         {/* 右：综合指标 */}
         <span className="text-[10px] text-[#8B7355] px-2 py-0.5 rounded bg-[#D4A85310] border border-[#D4A85320]">综合指标</span>
@@ -114,7 +114,7 @@ export function SentimentGauge() {
       <div className="relative space-y-2 mb-3">
         <div className="flex items-center justify-between mb-1.5">
           <span className="text-[10px] text-[#8B7355]">构成因子（以下各板块数据来源）</span>
-          <span className="text-[10px] text-[#6B5B3E]">权重</span>
+
         </div>
         {SENTIMENT.factors.map((f) => (
           <div key={f.name} className="flex items-center gap-2">
@@ -132,9 +132,7 @@ export function SentimentGauge() {
             <span className="text-[11px] w-7 text-right" style={{ fontFamily: "'JetBrains Mono', monospace", color: getSentimentColor(f.score) }}>
               {f.score.toFixed(0)}
             </span>
-            <span className="text-[9px] w-7 text-right" style={{ color: "#D4A85360", fontFamily: "'JetBrains Mono', monospace" }}>
-              {f.weight}%
-            </span>
+
             <div className="w-3.5">
               {(f.trend as string) === 'up' && <TrendingUp className="w-3 h-3 text-[#C23B22]" />}
               {(f.trend as string) === 'down' && <TrendingDown className="w-3 h-3 text-[#2D8B56]" />}
