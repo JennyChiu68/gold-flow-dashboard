@@ -30,7 +30,14 @@ export default function Home() {
       <HeroSection />
 
       {/* 核心情绪指数 + 金价 */}
-      <section className="container py-6">
+      <section className="container py-6" style={{ position: 'relative' }}>
+        {/* 核心区域背景强调 */}
+        <div style={{
+          position: 'absolute', inset: 0,
+          background: 'linear-gradient(180deg, #D4A85306 0%, transparent 100%)',
+          borderRadius: '12px',
+          pointerEvents: 'none',
+        }} />
         <motion.div
           className="grid grid-cols-1 lg:grid-cols-12 gap-5"
           initial="hidden"
