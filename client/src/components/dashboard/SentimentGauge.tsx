@@ -54,7 +54,7 @@ export function SentimentGauge() {
 
       {/* 标题 + 说明 */}
       <div className="relative mb-3">
-        <h3 className="text-base font-semibold text-[#E8D5A3] leading-tight">实物托底情绪指数</h3>
+        <h3 className="text-base font-semibold text-[#E8D5A3] leading-tight">积存金情绪指数</h3>
         <p className="text-[10px] text-[#8B7355] mt-0.5 leading-relaxed">
           综合下方4项市场数据加权计算，反映当前积存金市场整体热度
         </p>
