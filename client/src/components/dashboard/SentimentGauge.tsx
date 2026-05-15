@@ -91,9 +91,9 @@ export function SentimentGauge() {
               return <line key={tick} x1={x1} y1={y1} x2={x2} y2={y2} stroke="rgba(212,168,83,0.35)" strokeWidth="1.5" />;
             })}
             {/* 区间文字 */}
-            <text x="14" y="112" fontSize="7" fill="#C23B2270" textAnchor="middle">恐慌</text>
-            <text x="100" y="28" fontSize="7" fill="#D4A85370" textAnchor="middle">中性</text>
-            <text x="186" y="112" fontSize="7" fill="#4CAF5070" textAnchor="middle">贪婪</text>
+            <text x="14" y="114" fontSize="11" fontWeight="bold" fill="#E05C3F" textAnchor="middle" style={{ letterSpacing: '0.5px' }}>恐慌</text>
+            <text x="100" y="26" fontSize="11" fontWeight="bold" fill="#D4A853" textAnchor="middle" style={{ letterSpacing: '0.5px' }}>中性</text>
+            <text x="186" y="114" fontSize="11" fontWeight="bold" fill="#5DC96A" textAnchor="middle" style={{ letterSpacing: '0.5px' }}>贪婪</text>
           </svg>
           {/* 中心数值 */}
           <div className="absolute inset-0 flex flex-col items-center justify-end pb-2">
