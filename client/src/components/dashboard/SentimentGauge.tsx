@@ -67,10 +67,10 @@ export function SentimentGauge() {
           <svg viewBox="0 0 220 130" className="w-full h-full">
             <defs>
               <linearGradient id="gaugeGradCore" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%"   stopColor="#C23B22" />
-                <stop offset="35%"  stopColor="#D4742A" />
+                <stop offset="0%"   stopColor="#2D8B56" />
+                <stop offset="35%"  stopColor="#4CAF50" />
                 <stop offset="60%"  stopColor="#D4A853" />
-                <stop offset="100%" stopColor="#4CAF50" />
+                <stop offset="100%" stopColor="#C23B22" />
               </linearGradient>
             </defs>
             {/* 背景弧 */}
@@ -90,10 +90,10 @@ export function SentimentGauge() {
               const y2 = 108 - 100 * Math.sin(angle);
               return <line key={tick} x1={x1} y1={y1} x2={x2} y2={y2} stroke="rgba(212,168,83,0.4)" strokeWidth="1.5" />;
             })}
-            {/* 区间文字 — 左红（恐慌）中金（中性）右绶（贪婪），与弧形渐变一致 */}
-            <text x="18" y="122" fontSize="9" fontWeight="700" fill="#C23B22" textAnchor="middle" opacity="0.95">恐慌</text>
+            {/* 区间文字 — 左绶（恐慌）中金（中性）右红（贪婪），与弧形渐变一致 */}
+            <text x="18" y="122" fontSize="9" fontWeight="700" fill="#4CAF50" textAnchor="middle" opacity="0.95">恐慌</text>
             <text x="110" y="22" fontSize="9" fontWeight="700" fill="#D4A853" textAnchor="middle" opacity="0.95">中性</text>
-            <text x="202" y="122" fontSize="9" fontWeight="700" fill="#4CAF50" textAnchor="middle" opacity="0.95">贪婪</text>
+            <text x="202" y="122" fontSize="9" fontWeight="700" fill="#C23B22" textAnchor="middle" opacity="0.95">贪婪</text>
           </svg>
           {/* 中心数值 + 当前状态（合并，突出显示） */}
           <div className="absolute inset-0 flex flex-col items-center justify-end pb-3">

@@ -226,13 +226,13 @@ export const BANK_EVENTS = [
 ];
 
 // 辅助函数
-// 颜色逻辑：低分=红（恐慌）→橙（恐惧）→金（中性）→淡绶（贪婪）→绶（极度贪婪）
+// 颜色逻辑：低分=绶（冷静/恐慌）→金（中性）→红（过热/贪婪）
 export function getSentimentColor(score: number): string {
-  if (score >= 80) return "#4CAF50"; // 极度贪婪 - 绶
-  if (score >= 60) return "#8BC34A"; // 贪婪 - 淡绶
+  if (score >= 80) return "#C23B22"; // 极度贪婪 - 红（过热警示）
+  if (score >= 60) return "#E07B3A"; // 贪婪 - 橙
   if (score >= 40) return "#D4A853"; // 中性 - 金
-  if (score >= 20) return "#E07B3A"; // 恐惧 - 橙
-  return "#C23B22"; // 极度恐慌 - 红
+  if (score >= 20) return "#4CAF50"; // 恐惧 - 绶
+  return "#2D8B56"; // 极度恐慌 - 深绶
 }
 
 export function getSentimentLabel(score: number): string {
