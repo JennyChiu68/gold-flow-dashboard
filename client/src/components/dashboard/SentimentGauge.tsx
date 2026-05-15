@@ -62,9 +62,9 @@ export function SentimentGauge() {
 
       {/* 仪表盘 */}
       <div className="relative flex justify-center items-center mb-3">
-        <div className="relative w-52 h-32">
+        <div className="relative w-56 h-36">
           <img src={GAUGE_BG} alt="" className="absolute inset-0 w-full h-full object-contain opacity-10" />
-          <svg viewBox="0 0 200 115" className="w-full h-full">
+          <svg viewBox="0 0 220 130" className="w-full h-full">
             <defs>
               <linearGradient id="gaugeGradCore" x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop offset="0%"   stopColor="#C23B22" />
@@ -74,36 +74,33 @@ export function SentimentGauge() {
               </linearGradient>
             </defs>
             {/* 背景弧 */}
-            <path d="M 20 100 A 80 80 0 0 1 180 100" fill="none"
-              stroke="url(#gaugeGradCore)" strokeWidth="10" strokeLinecap="round" opacity="0.15" />
+            <path d="M 25 108 A 85 85 0 0 1 195 108" fill="none"
+              stroke="url(#gaugeGradCore)" strokeWidth="10" strokeLinecap="round" opacity="0.18" />
             {/* 进度弧 */}
-            <path d="M 20 100 A 80 80 0 0 1 180 100" fill="none"
+            <path d="M 25 108 A 85 85 0 0 1 195 108" fill="none"
               stroke={color} strokeWidth="10" strokeLinecap="round"
-              strokeDasharray={`${progress} ${circumference}`}
+              strokeDasharray={`${(score / 100) * Math.PI * 85} ${Math.PI * 85}`}
               style={{ filter: `drop-shadow(0 0 10px ${color}70)` }} />
             {/* 刻度 */}
             {[0, 25, 50, 75, 100].map((tick) => {
               const angle = Math.PI - (tick / 100) * Math.PI;
-              const x1 = 100 + 86 * Math.cos(angle);
-              const y1 = 100 - 86 * Math.sin(angle);
-              const x2 = 100 + 94 * Math.cos(angle);
-              const y2 = 100 - 94 * Math.sin(angle);
-              return <line key={tick} x1={x1} y1={y1} x2={x2} y2={y2} stroke="rgba(212,168,83,0.35)" strokeWidth="1.5" />;
+              const x1 = 110 + 91 * Math.cos(angle);
+              const y1 = 108 - 91 * Math.sin(angle);
+              const x2 = 110 + 100 * Math.cos(angle);
+              const y2 = 108 - 100 * Math.sin(angle);
+              return <line key={tick} x1={x1} y1={y1} x2={x2} y2={y2} stroke="rgba(212,168,83,0.4)" strokeWidth="1.5" />;
             })}
-            {/* 区间文字 */}
-            <text x="14" y="114" fontSize="11" fontWeight="bold" fill="#E05C3F" textAnchor="middle" style={{ letterSpacing: '0.5px' }}>恐慌</text>
-            <text x="100" y="26" fontSize="11" fontWeight="bold" fill="#D4A853" textAnchor="middle" style={{ letterSpacing: '0.5px' }}>中性</text>
-            <text x="186" y="114" fontSize="11" fontWeight="bold" fill="#5DC96A" textAnchor="middle" style={{ letterSpacing: '0.5px' }}>贪婪</text>
+            {/* 区间文字 — 颜色与弧形渐变色对应，字号适中不抢眼 */}
+            <text x="18" y="122" fontSize="9" fontWeight="600" fill="#C23B22" textAnchor="middle" opacity="0.9">恐慌</text>
+            <text x="110" y="22" fontSize="9" fontWeight="600" fill="#D4A853" textAnchor="middle" opacity="0.9">中性</text>
+            <text x="202" y="122" fontSize="9" fontWeight="600" fill="#4CAF50" textAnchor="middle" opacity="0.9">贪婪</text>
           </svg>
-          {/* 中心数值 */}
-          <div className="absolute inset-0 flex flex-col items-center justify-end pb-2">
-            <span className="text-4xl font-bold" style={{ fontFamily: "'JetBrains Mono', monospace", color }}>
+          {/* 中心数值 + 当前状态（合并，突出显示） */}
+          <div className="absolute inset-0 flex flex-col items-center justify-end pb-3">
+            <span className="text-5xl font-bold leading-none" style={{ fontFamily: "'JetBrains Mono', monospace", color, textShadow: `0 0 20px ${color}60` }}>
               {score.toFixed(1)}
             </span>
-            <span
-              className="text-[10px] font-semibold mt-0.5 px-2 py-0.5 rounded-full"
-              style={{ color, background: `${color}18`, border: `1px solid ${color}40` }}
-            >
+            <span className="text-sm font-bold mt-1 tracking-widest" style={{ color }}>
               {level}
             </span>
           </div>
